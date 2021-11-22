@@ -35,8 +35,10 @@ services:
       MYSQL_ROOT_PASSWORD: 'rootpass'
     ports:
       - '3306:3306'
+      - '122:22'
     expose:
       - '3306'
+      - '22'
     volumes:
       - ./master-1/secrets:/docker-entrypoint-initdb.d
       - ./master-1/conf.d:/etc/mysql/mariadb.conf.d 
@@ -75,8 +77,10 @@ services:
       MYSQL_ROOT_PASSWORD: 'rootpass'
     ports:
       - '3307:3306'
+      - '123:22'
     expose:
       - '3306'
+      - '22'
     volumes:
       - ./master-2/secrets:/docker-entrypoint-initdb.d
       - ./master-2/conf.d:/etc/mysql/mariadb.conf.d 
@@ -114,7 +118,9 @@ services:
       MYSQL_ROOT_PASSWORD: 'rootpass'
     ports:
       - '3308:3306'
+      - '124:22'
     expose:
       - '3306'
+      - '22'
     volumes:
       - ./slave-1/conf.d:/etc/mysql/mariadb.conf.d 
